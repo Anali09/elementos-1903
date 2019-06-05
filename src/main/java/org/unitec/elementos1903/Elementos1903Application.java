@@ -24,12 +24,12 @@ public class Elementos1903Application implements CommandLineRunner {
        //Buscar todo
        
        
-       for(Cliente c: repoCliente.findAll()){
+       for(Cliente c: repoCliente.findByEmail("ana.cruzs@hotmail.com")){
           System.out.println(c);
       }
        
        //Buscar por id
-       System.out.print(repoCliente.findById(2));
+       //System.out.print(repoCliente.findById(2));
        
        //Borramos el primero despues lo vuelven a insetar 
        
