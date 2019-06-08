@@ -10,11 +10,8 @@ package org.unitec.elementos1903;
  * @author Servicios Especiales
  */
 public class Estatus {
-    private String mensaje;
-    private boolean success;
-
-    public Estatus() {
-    }
+    String mensaje;
+     boolean success;
 
     public String getMensaje() {
         return mensaje;
@@ -31,4 +28,7 @@ public class Estatus {
     public void setSuccess(boolean success) {
         this.success = success;
     }
+
+   
+
 }

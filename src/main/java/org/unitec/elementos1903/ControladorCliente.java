@@ -38,6 +38,7 @@ public class ControladorCliente {
             
             ObjectMapper maper=new ObjectMapper();
             Cliente c= maper.readValue(json, Cliente.class);
+            repo.save(c);
             Estatus e=new Estatus();
             e.setMensaje("Cliente guardado prrrooo");
             e.setSuccess(true);
