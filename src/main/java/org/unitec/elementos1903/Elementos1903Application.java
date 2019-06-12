@@ -19,7 +19,7 @@ public class Elementos1903Application implements CommandLineRunner {
     public void run(String... args) throws Exception {
       
        //repoCliente.save(new Cliente(1, "Lilia Cruz","ana.cruzs@hotmail.com"));
-       //repoCliente.save(new Cliente(2,"Cesar Rosales", "cesa.Olguin@hotmail.com"));
+      // repoCliente.save(new Cliente(2,"Cesar Olguin", "cesa.rosales@hotmail.com"));
        
        //Buscar todo
        
