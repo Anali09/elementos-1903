@@ -24,9 +24,9 @@ public class Elementos1903Application implements CommandLineRunner {
        //Buscar todo
        
        
-       for(Cliente c: repoCliente.findByEmail("ana.cruzs@hotmail.com")){
-          System.out.println(c);
-      }
+      // for(Cliente c: repoCliente.findByEmail("ana.cruzs@hotmail.com")){
+        //  System.out.println(c);
+      //}
        
        //Buscar por id
        //System.out.print(repoCliente.findById(2));
