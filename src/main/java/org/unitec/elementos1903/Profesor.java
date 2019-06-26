@@ -5,51 +5,50 @@
  */
 package org.unitec.elementos1903;
 
+
 import org.springframework.data.annotation.Id;
 
 /**
  *
- * @author Servicios Especiales
+ * @author campitos
  */
 public class Profesor {
     
     @Id
-    
-    private Integer clave;
-    private String nombre;
-    private String email;
+    private Integer Clave;
 
-    public Profesor(Integer clave, String nombre, String email) {
-        this.clave = clave;
-        this.nombre = nombre;
-        this.email = email;
+    public Profesor(Integer Clave, String Nombre, String Email) {
+        this.Clave = Clave;
+        this.Nombre = Nombre;
+        this.Email = Email;
     }
 
     public Profesor() {
     }
+    private String Nombre;
+    private String Email;
 
     public Integer getClave() {
-        return clave;
+        return Clave;
     }
 
-    public void setClave(Integer clave) {
-        this.clave = clave;
+    public void setClave(Integer Clave) {
+        this.Clave = Clave;
     }
 
     public String getNombre() {
-        return nombre;
+        return Nombre;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setNombre(String Nombre) {
+        this.Nombre = Nombre;
     }
 
     public String getEmail() {
-        return email;
+        return Email;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setEmail(String Email) {
+        this.Email = Email;
     }
-    
 }

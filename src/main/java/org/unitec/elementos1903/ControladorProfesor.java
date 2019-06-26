@@ -5,92 +5,87 @@
  */
 package org.unitec.elementos1903;
 
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.util.ArrayList;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
-/**
- *
- * @author Servicios Especiales
- */
 @RestController
 @RequestMapping("/api")
 public class ControladorProfesor {
-    
-    //METODO PARA GUARDAR
-    @Autowired  
+    //Método para Guardar
+
+    @Autowired
     RepoProfesor repoProfe;
+
     
-    //GUARDAR
+    //Guardar
     @PostMapping("/profesor")
-    public Estatus guardar(@RequestBody String json)throws Exception{
-       
-        //Primero vamos a recibir el json del cliente web y lo transformamos a un objeto java 
-        //Con la clase ObjectMapper
-        
-        ObjectMapper maper=new ObjectMapper();
-        
-       //Ahora si lo leemos
-       Profesor profe= maper.readValue(json, Profesor.class);
-       
-       repoProfe.save(profe);
-       //Generar el estatus
-       Estatus e=new Estatus();
-       e.setMensaje("Profe guardado con exito");
-       e.setSuccess(true);
-       return e;
+    public Estatus guardar(@RequestBody String json) throws Exception {
+        //Primero  vamos a recibir el json del cliente web Y lo transformamos
+        //a un objeto Java  con la clase ObjectMapper
+        ObjectMapper maper = new ObjectMapper();
+        //Ahora si lo leemos
+        Profesor profe = maper.readValue(json, Profesor.class);
+
+        repoProfe.save(profe);
+        //Generamos el status
+        Estatus e = new Estatus();
+        e.setMensaje("Profe guardado con exito");
+        e.setSuccess(true);
+
+        return e;
+
     }
-    
     //Buscar todos
     @GetMapping("/profesor")
-    public List<Profesor>buscarTodos(){
-        return repoProfe.findAll(); 
-    
+    public List<Profesor> buscarTodos(){
+       return repoProfe.findAll();
     }
+    
     //Borrar
     @DeleteMapping("/profesor/{id}")
     public Estatus borrar(@PathVariable Integer id){
         repoProfe.deleteById(id);
         Estatus e=new Estatus();
         e.setSuccess(true);
-        e.setMensaje("Profesor borrado con exito");
+        e.setMensaje("Profesor borradon con exito");
         return e;
+        
     }
     
     //Actualizar
     @PutMapping("/profesor")
     public Estatus actualizar(@RequestBody String json)throws Exception{
+         //Primero  vamos a recibir el json del cliente web Y lo transformamos
+        //a un objeto Java  con la clase ObjectMapper
+        ObjectMapper maper = new ObjectMapper();
+        //Ahora si lo leemos
+        Profesor profe = maper.readValue(json, Profesor.class);
+
         
-       //Esta parte es la misma del método "guardar"
-       ObjectMapper maper=new ObjectMapper();
-        
-       //Ahora si lo leemos
-       Profesor profe= maper.readValue(json, Profesor.class);
-       
-       repoProfe.save(profe);
-       
-       //Generar el estatus
-       Estatus e=new Estatus();
-       e.setMensaje("Profe guardado con exito");
-       e.setSuccess(true);
-       
-       return e;
+        //Generamos el status
+        Estatus e = new Estatus();
+        e.setMensaje("Profe guardado con exito");
+        e.setSuccess(true);
+
+        return e;
     }
-    //Prueba
-    
-    //Buscar por ID
+    //BUscar por ID
     @GetMapping("/profesor/{id}")
     public Profesor buscarPorId(@PathVariable Integer id){
-        return repoProfe.findById(id).get();
+        
+       return repoProfe.findById(id).get();
     }
+    
     
 }

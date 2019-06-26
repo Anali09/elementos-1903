@@ -5,12 +5,19 @@
  */
 package org.unitec.elementos1903;
 
-import org.springframework.data.mongodb.repository.MongoRepository;
+//import org.springframework.data.mongodb.repository.MongoRepository;
 
 /**
  *
  * @author Servicios Especiales
  */
-public interface RepoProfesor extends MongoRepository<Profesor,Integer> {
+//public interface RepoProfesor extends MongoRepository<Profesor,Integer> {
     
+//}
+
+import org.springframework.data.mongodb.repository.MongoRepository;
+
+
+public interface RepoProfesor extends MongoRepository<Profesor, Integer>{
+   
 }
