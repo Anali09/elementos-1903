@@ -27,7 +27,10 @@ import org.springframework.web.bind.annotation.RestController;
 public class ControladorProfesor {
     
     //METODO PARA GUARDAR
-    @Autowired  RepoProfesor repoProfe;
+    @Autowired  
+    RepoProfesor repoProfe;
+    
+    //GUARDAR
     @PostMapping("/profesor")
     public Estatus guardar(@RequestBody String json)throws Exception{
        
@@ -44,7 +47,6 @@ public class ControladorProfesor {
        Estatus e=new Estatus();
        e.setMensaje("Profe guardado con exito");
        e.setSuccess(true);
-       
        return e;
     }
     

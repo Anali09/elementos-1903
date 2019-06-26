@@ -5,11 +5,16 @@
  */
 package org.unitec.elementos1903;
 
+import org.springframework.data.annotation.Id;
+
 /**
  *
  * @author Servicios Especiales
  */
 public class Profesor {
+    
+    @Id
+    
     private Integer clave;
     private String nombre;
     private String email;
