@@ -1,5 +1,6 @@
 package org.unitec.elementos1903;
 
+import com.sun.xml.internal.messaging.saaj.packaging.mime.util.QDecoderStream;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -9,7 +10,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class Elementos1903Application implements CommandLineRunner {
     
     @Autowired
-    RepoCliente repoCliente;
+    RepoProfesor p;
 
 	public static void main(String[] args) {
 		SpringApplication.run(Elementos1903Application.class, args);
@@ -34,5 +35,8 @@ public class Elementos1903Application implements CommandLineRunner {
        //Borramos el primero despues lo vuelven a insetar 
        
       // repoCliente.deleteById(1);
+      p.save(new Profesor(1234, "ana"," ana.cruz"));
+      
+      
 }
 }
